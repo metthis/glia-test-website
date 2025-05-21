@@ -1,0 +1,19 @@
+<html lang="en">
+    <head>
+        <title>Interact with us!</title>
+	<script>
+	    //Read idtoken from query parameter with the same name.
+	    const params = new Proxy(new URLSearchParams(window.location.search), {
+		    get: (searchParams, prop) => searchParams.get(prop),
+	    });
+	    const idToken = params.idtoken;
+	    window.getGliaContext = () => ({ idToken });
+        </script>
+        <script async src="https://api.at.samo.io/salemove_integration.js"></script>
+    </head>
+
+    <body>
+        <h1>Tere!</h1>
+        <p>We don't sell anything, but we have customer service!</p>
+    </body>
+</html>
